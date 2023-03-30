@@ -1,0 +1,30 @@
+---
+title: "Ex2"
+author: "Phuong Anh Mai"
+date: "`r Sys.Date()`"
+ output:
+           bookdown::html_document2
+       keep_md: true
+
+---
+```{r}
+# Libraries
+     library(tidyverse)
+     library(palmerpenguins)
+```
+
+```{r}
+library(palmerpenguins)
+data(package = 'palmerpenguins')
+ggplot(penguins, aes(x = bill_depth_mm , y = flipper_length_mm, color = species)) +
+  geom_point()
+```
+ 
+```{r}
+ggplot(penguins, aes(x = species, y = bill_length_mm, fill=species)) +
+  geom_boxplot(outlier.colour = "blue", outlier.size = 2) +
+  geom_jitter(width=0.2, alpha = 0.5) +
+  labs(title="Penguin Bill Length") +
+  theme_light()
+```
+
